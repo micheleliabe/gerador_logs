@@ -1,0 +1,59 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: log-generator-config
+data:
+  logs_config.json: |
+    {
+        "interval": 1,
+        "logs": [
+            {
+                "message": "Completed 200 OK, headers={masked}",
+                "level": "INFO"
+            },
+            {
+                "message": "No view rendering, null ModelAndView returned.",
+                "level": "WARNING"
+            },
+            {
+                "message": "Entrando na rotina de SELECT",
+                "level": "INFO"
+            },
+            {
+                "message": "Entrando na rotina de UPDATE",
+                "level": "INFO"
+            },
+            {
+                "message": "*** Inicio: Transmissão automática:: {}",
+                "level": "INFO"
+            },
+            {
+                "message": "*** Fim: Transmissão automática:: {}",
+                "level": "INFO"
+            },
+            {
+                "message": "Token Digital ::",
+                "level": "ERROR"
+            },
+            {
+                "message": "heartbeat() - enter",
+                "level": "INFO"
+            },
+            {
+                "message": "echo() - enter",
+                "level": "INFO"
+            },
+            {
+                "message": "GET /static/media/calendarEdit.c28455a6.svg",
+                "level": "INFO"
+            },
+            {
+                "message": "GET /static/media/congratulation.7d186f51.svg",
+                "level": "INFO"
+            },
+            {
+                "message": "GET /static/media/logout.ebba1ab1.svg",
+                "level": "INFO"
+            }
+        ]
+    } 

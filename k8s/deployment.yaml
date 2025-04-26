@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: log-generator
+  labels:
+    app: log-generator
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: log-generator
+  template:
+    metadata:
+      labels:
+        app: log-generator
+    spec:
+      containers:
+      - name: log-generator
+        image: log-generator:latest
+        imagePullPolicy: Never
+        env:
+        - name: LOG_FORMAT_JSON
+          value: "false"
+        volumeMounts:
+        - name: config-volume
+          mountPath: /app/logs_config.json
+          subPath: logs_config.json
+      volumes:
+      - name: config-volume
+        configMap:
+          name: log-generator-config 

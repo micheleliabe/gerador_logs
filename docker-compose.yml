@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  log-generator:
+    build: .
+    container_name: log-generator
+    volumes:
+      - ./logs_config.json:/app/logs_config.json
+    environment:
+      - LOG_INTERVAL_MIN=${LOG_INTERVAL_MIN:-0.5}
+      - LOG_INTERVAL_MAX=${LOG_INTERVAL_MAX:-3.5}
+      - LOG_FORMAT_JSON=${LOG_FORMAT_JSON:-false}
+      - LOG_LEVEL=${LOG_LEVEL:-INFO}
+      - CONFIG_FILE=${CONFIG_FILE:-logs_config.json}
+    restart: unless-stopped
+    tty: true
+    stdin_open: true 
