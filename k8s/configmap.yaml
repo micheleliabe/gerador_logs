@@ -8,51 +8,51 @@ data:
         "interval": 1,
         "logs": [
             {
-                "message": "Completed 200 OK, headers={masked}",
+                "message": "User authentication successful for user_id: 12345",
                 "level": "INFO"
             },
             {
-                "message": "No view rendering, null ModelAndView returned.",
+                "message": "Database connection established successfully",
+                "level": "INFO"
+            },
+            {
+                "message": "API request completed: GET /api/users - Status: 200",
+                "level": "INFO"
+            },
+            {
+                "message": "Cache miss for key: user_profile_12345",
                 "level": "WARNING"
             },
             {
-                "message": "Entrando na rotina de SELECT",
-                "level": "INFO"
+                "message": "High memory usage detected: 85% of available memory in use",
+                "level": "WARNING"
             },
             {
-                "message": "Entrando na rotina de UPDATE",
-                "level": "INFO"
-            },
-            {
-                "message": "*** Inicio: Transmissão automática:: {}",
-                "level": "INFO"
-            },
-            {
-                "message": "*** Fim: Transmissão automática:: {}",
-                "level": "INFO"
-            },
-            {
-                "message": "Token Digital ::",
+                "message": "Failed to connect to external service: Connection timeout",
                 "level": "ERROR"
             },
             {
-                "message": "heartbeat() - enter",
+                "message": "Database transaction failed: Deadlock detected",
+                "level": "ERROR"
+            },
+            {
+                "message": "Critical system failure: Unable to initialize core services",
+                "level": "CRITICAL"
+            },
+            {
+                "message": "Debug: Processing request with parameters: {id: 12345, type: 'user'}",
+                "level": "DEBUG"
+            },
+            {
+                "message": "Debug: Memory allocation details - Used: 512MB, Free: 1024MB",
+                "level": "DEBUG"
+            },
+            {
+                "message": "System health check passed successfully",
                 "level": "INFO"
             },
             {
-                "message": "echo() - enter",
-                "level": "INFO"
-            },
-            {
-                "message": "GET /static/media/calendarEdit.c28455a6.svg",
-                "level": "INFO"
-            },
-            {
-                "message": "GET /static/media/congratulation.7d186f51.svg",
-                "level": "INFO"
-            },
-            {
-                "message": "GET /static/media/logout.ebba1ab1.svg",
+                "message": "Backup process started: Creating system snapshot",
                 "level": "INFO"
             }
         ]

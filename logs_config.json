@@ -1,60 +1,161 @@
 {
+    "interval": 1,
     "logs": [
         {
-            "message": "Completed 200 OK, headers={masked}",
+            "message": "User authentication successful for user_id: 12345",
             "level": "INFO"
         },
         {
-            "message": "No view rendering, null ModelAndView returned.",
+            "message": "Database connection established successfully",
+            "level": "INFO"
+        },
+        {
+            "message": "API request completed: GET /api/users - Status: 200",
+            "level": "INFO"
+        },
+        {
+            "message": "Cache miss for key: user_profile_12345",
             "level": "WARNING"
         },
         {
-            "message": "Entrando na rotina de SELECT",
-            "level": "INFO"
+            "message": "High memory usage detected: 85% of available memory in use",
+            "level": "WARNING"
         },
         {
-            "message": "Entrando na rotina de UPDATE",
-            "level": "INFO"
-        },
-        {
-            "message": "*** Inicio: Transmissão automática:: {}",
-            "level": "INFO"
-        },
-        {
-            "message": "*** Fim: Transmissão automática:: {}",
-            "level": "INFO"
-        },
-        {
-            "message": "Token Digital ::",
+            "message": "Failed to connect to external service: Connection timeout",
             "level": "ERROR"
         },
         {
-            "message": "heartbeat() - enter",
-            "level": "INFO"
+            "message": "Database transaction failed: Deadlock detected",
+            "level": "ERROR"
         },
         {
-            "message": "echo() - enter",
-            "level": "INFO"
+            "message": "Critical system failure: Unable to initialize core services",
+            "level": "CRITICAL"
         },
         {
-            "message": "GET /static/media/calendarEdit.c28455a6.svg",
-            "level": "INFO"
-        },
-        {
-            "message": "GET /static/media/congratulation.7d186f51.svg",
-            "level": "INFO"
-        },
-        {
-            "message": "GET /static/media/logout.ebba1ab1.svg",
-            "level": "INFO"
-        },
-        {
-            "message": "Debug message for testing",
+            "message": "Debug: Processing request with parameters: {id: 12345, type: 'user'}",
             "level": "DEBUG"
         },
         {
-            "message": "Critical system error",
+            "message": "Debug: Memory allocation details - Used: 512MB, Free: 1024MB",
+            "level": "DEBUG"
+        },
+        {
+            "message": "System health check passed successfully",
+            "level": "INFO"
+        },
+        {
+            "message": "Backup process started: Creating system snapshot",
+            "level": "INFO"
+        },
+        {
+            "message": "New user registration completed: user_id: 67890",
+            "level": "INFO"
+        },
+        {
+            "message": "Password reset request initiated for user: john.doe@example.com",
+            "level": "INFO"
+        },
+        {
+            "message": "Session expired for user_id: 12345 - Redirecting to login",
+            "level": "WARNING"
+        },
+        {
+            "message": "Rate limit exceeded for IP: 192.168.1.1",
+            "level": "WARNING"
+        },
+        {
+            "message": "Invalid API key provided in request",
+            "level": "ERROR"
+        },
+        {
+            "message": "File system error: Disk space below 5% threshold",
+            "level": "ERROR"
+        },
+        {
+            "message": "Security breach detected: Multiple failed login attempts",
             "level": "CRITICAL"
+        },
+        {
+            "message": "Debug: SQL query execution time: 150ms",
+            "level": "DEBUG"
+        },
+        {
+            "message": "Debug: Cache hit ratio: 78.5%",
+            "level": "DEBUG"
+        },
+        {
+            "message": "Email notification sent successfully to: user@example.com",
+            "level": "INFO"
+        },
+        {
+            "message": "Scheduled maintenance task completed",
+            "level": "INFO"
+        },
+        {
+            "message": "API response time exceeded threshold: 2.5s",
+            "level": "WARNING"
+        },
+        {
+            "message": "Database index fragmentation detected: 25%",
+            "level": "WARNING"
+        },
+        {
+            "message": "External API service unavailable: 503 Service Unavailable",
+            "level": "ERROR"
+        },
+        {
+            "message": "Data validation failed: Invalid input format",
+            "level": "ERROR"
+        },
+        {
+            "message": "System overload: CPU usage at 98%",
+            "level": "CRITICAL"
+        },
+        {
+            "message": "Debug: Network latency: 45ms",
+            "level": "DEBUG"
+        },
+        {
+            "message": "Debug: JWT token validation successful",
+            "level": "DEBUG"
+        },
+        {
+            "message": "User profile updated successfully",
+            "level": "INFO"
+        },
+        {
+            "message": "New feature flag enabled: experimental_search",
+            "level": "INFO"
+        },
+        {
+            "message": "SSL certificate expiration in 30 days",
+            "level": "WARNING"
+        },
+        {
+            "message": "Database backup size exceeds quota",
+            "level": "WARNING"
+        },
+        {
+            "message": "Payment processing failed: Insufficient funds",
+            "level": "ERROR"
+        },
+        {
+            "message": "Data corruption detected in user records",
+            "level": "ERROR"
+        },
+        {
+            "message": "System integrity compromised: Unauthorized access detected",
+            "level": "CRITICAL"
+        },
+        {
+            "message": "Debug: Request payload size: 2.4KB",
+            "level": "DEBUG"
+        },
+        {
+            "message": "Debug: Session token issued: exp=24h",
+            "level": "DEBUG"
         }
     ]
 } 
