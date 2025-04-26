@@ -37,8 +37,8 @@ A Python application that generates random log messages with configurable format
 # Start with default settings
 docker-compose up
 
-# Start with JSON format and DEBUG level
-docker-compose run -e LOG_FORMAT_JSON=true -e LOG_LEVEL=DEBUG log-generator
+# Start with JSON format
+docker-compose run -e LOG_FORMAT_JSON=true log-generator
 ```
 
 ### Using Docker Directly
@@ -53,9 +53,6 @@ docker run -it log-generator
 # Run with custom settings
 docker run -it \
   -e LOG_FORMAT_JSON=true \
-  -e LOG_LEVEL=DEBUG \
-  -e LOG_INTERVAL_MIN=1 \
-  -e LOG_INTERVAL_MAX=5 \
   log-generator
 ```
 
@@ -79,7 +76,7 @@ kubectl logs -f deployment/log-generator
 python app.py
 
 # With custom settings
-LOG_FORMAT_JSON=true LOG_LEVEL=DEBUG python app.py
+LOG_FORMAT_JSON=true python app.py
 ```
 
 ## Configuration
@@ -88,25 +85,23 @@ LOG_FORMAT_JSON=true LOG_LEVEL=DEBUG python app.py
 
 | Variable | Description | Default | Example |
 |----------|-------------|---------|---------|
-| `LOG_INTERVAL_MIN` | Minimum interval between logs (seconds) | 0.5 | 1.0 |
-| `LOG_INTERVAL_MAX` | Maximum interval between logs (seconds) | 3.5 | 5.0 |
 | `LOG_FORMAT_JSON` | Use JSON format for logs | false | true |
-| `LOG_LEVEL` | Minimum log level | INFO | DEBUG |
 | `CONFIG_FILE` | Path to log configuration file | logs_config.json | custom_config.json |
 
 ### Log Configuration File
 
-The application uses a JSON configuration file (`logs_config.json` by default) to define the log messages and their levels:
+The application uses a JSON configuration file (`logs_config.json` by default) to define the log messages, their levels, and the interval between logs:
 
 ```json
 {
+    "interval": 1,
     "logs": [
         {
-            "message": "Completed 200 OK, headers={masked}",
+            "message": "User authentication successful for user_id: 12345",
             "level": "INFO"
         },
         {
-            "message": "No view rendering, null ModelAndView returned.",
+            "message": "Cache miss for key: user_profile_12345",
             "level": "WARNING"
         }
     ]
@@ -117,8 +112,8 @@ The application uses a JSON configuration file (`logs_config.json` by default) t
 
 ### Text Format (default)
 ```
-2024-03-14 10:30:45 - INFO - Log generator started successfully
-2024-03-14 10:30:46 - ERROR - Token Digital ::
+2024-03-14 10:30:45 - INFO - User authentication successful for user_id: 12345
+2024-03-14 10:30:46 - WARNING - Cache miss for key: user_profile_12345
 ```
 
 ### JSON Format
@@ -126,13 +121,13 @@ The application uses a JSON configuration file (`logs_config.json` by default) t
 {
     "timestamp": "2024-03-14T10:30:45",
     "level": "INFO",
-    "message": "Log generator started successfully",
+    "message": "User authentication successful for user_id: 12345",
     "logger": "__main__"
 }
 {
     "timestamp": "2024-03-14T10:30:46",
-    "level": "ERROR",
-    "message": "Token Digital ::",
+    "level": "WARNING",
+    "message": "Cache miss for key: user_profile_12345",
     "logger": "__main__"
 }
 ```
@@ -174,7 +169,8 @@ gerador_logs_v2/
 To add or modify log messages:
 1. Edit the `logs_config.json` file
 2. Add new entries with `message` and `level` fields
-3. Restart the application
+3. Set the desired interval between logs
+4. Restart the application
 
 ## Use Cases
 

@@ -42,10 +42,9 @@ kubectl logs -f deployment/log-generator
 
 The deployment can be configured using environment variables in the `deployment.yaml` file:
 
-- `LOG_INTERVAL_MIN`: Minimum interval between logs (default: 0.5)
-- `LOG_INTERVAL_MAX`: Maximum interval between logs (default: 3.5)
 - `LOG_FORMAT_JSON`: Use JSON format (default: false)
-- `LOG_LEVEL`: Minimum log level (default: INFO)
+
+The log configuration (messages, levels, and interval) is managed through the ConfigMap in `configmap.yaml`.
 
 ## Updating Log Configuration
 
